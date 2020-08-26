@@ -1,17 +1,20 @@
-/* .jumbotron.search-bar {
+.jumbotron.search-bar {
     background-color: black;
+}
+
+.title {
+    color: white;
+    text-align: center;
 }
 
 .form-group {
     display: flex;
     justify-content: center;
-}
-
-input.form-control {
-    width: 50%;
     text-align: center;
 }
 
-h1 {
-    color: white;
-} */
+input.form-input {
+    width: 45%;
+    text-align: center;
+    height: 40px;
+}

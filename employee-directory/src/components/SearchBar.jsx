@@ -10,7 +10,7 @@ function SearchBar() {
 
     useEffect(() => {
         axios
-            .get('https://randomuser.me/api/?results=10')
+            .get('https://randomuser.me/api/?nat=us&results=10&seed=foobar')
             .then((res) => {
                 setEmployees(res.data.results);
             })
@@ -30,14 +30,17 @@ function SearchBar() {
     return (
         <div>
             <div className="jumbotron search-bar">
-                <h1>Employee Directory</h1>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    onChange={(e) => setSearch(e.target.value)}
-                ></input>
-                {employeeComponent}
+                <h1 className="title">Employee Directory</h1>
+                <div className="form-group">
+                    <input
+                        className="form-input"
+                        type="text"
+                        placeholder="Search"
+                        onChange={(e) => setSearch(e.target.value)}
+                    ></input>
+                </div>
             </div>
+            {employeeComponent}
         </div>
     );
 }
