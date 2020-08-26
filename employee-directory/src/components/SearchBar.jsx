@@ -19,11 +19,11 @@ function SearchBar() {
             });
     }, []);
 
-    const filteredEmployees = employees.filter((employee) => {
-        return employee.name;
+    const filter = employees.filter((employee) => {
+        return employee.name.first.toLowerCase().includes(search.toLowerCase());
     });
 
-    const employeeComponent = filteredEmployees.map((people) => (
+    const employeeComponent = filter.map((people) => (
         <Employees key={people.name.first} people={people} />
     ));
 
