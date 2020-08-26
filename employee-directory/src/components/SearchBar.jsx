@@ -1,32 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../App.css';
+
 import Employees from './Employees';
 
 function SearchBar() {
-    const [employee, setEmployee] = useState('');
+    const [employees, setEmployees] = useState([]);
+    const [search, setSearch] = useState('');
 
-    const getEmployee = (e) => {
-        setEmployee(e.target.value);
-    };
+    useEffect(() => {
+        axios
+            .get('https://randomuser.me/api/')
+            .then((res) => {
+                setEmployees(res.data);
+                console.log(res.data.results);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
 
     return (
         <div>
             <div className="jumbotron search-bar">
                 <h1 style={{ textAlign: 'center' }}>Employee Directory</h1>
-                <form onSubmit={getEmployee} className="form">
-                    <div className="form-group ">
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="employee"
-                            onChange={getEmployee}
-                        />
-                    </div>
-                </form>
+                {search}
+                <input
+                    type="text"
+                    placeholder="Search"
+                    onChange={(e) => setSearch(e.target.value)}
+                ></input>
             </div>
-            <div>
-                <Employees employee={employee} />
-            </div>
+            <div></div>
         </div>
     );
 }
