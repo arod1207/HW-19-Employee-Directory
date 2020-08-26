@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+// imported Search Bar Component //
 import SearchBar from './components/SearchBar';
 
 function App() {
