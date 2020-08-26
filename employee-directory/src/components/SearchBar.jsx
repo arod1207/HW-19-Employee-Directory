@@ -10,28 +10,34 @@ function SearchBar() {
 
     useEffect(() => {
         axios
-            .get('https://randomuser.me/api/')
+            .get('https://randomuser.me/api/?results=10')
             .then((res) => {
-                setEmployees(res.data);
-                console.log(res.data.results);
+                setEmployees(res.data.results);
             })
             .catch((err) => {
                 console.log(err);
             });
     }, []);
 
+    const filteredEmployees = employees.filter((employee) => {
+        return employee.name;
+    });
+
+    const employeeComponent = filteredEmployees.map((people) => (
+        <Employees key={people.name.first} people={people} />
+    ));
+
     return (
         <div>
             <div className="jumbotron search-bar">
-                <h1 style={{ textAlign: 'center' }}>Employee Directory</h1>
-                {search}
+                <h1>Employee Directory</h1>
                 <input
                     type="text"
                     placeholder="Search"
                     onChange={(e) => setSearch(e.target.value)}
                 ></input>
+                {employeeComponent}
             </div>
-            <div></div>
         </div>
     );
 }

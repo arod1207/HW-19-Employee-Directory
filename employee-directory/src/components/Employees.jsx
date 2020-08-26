@@ -4,9 +4,13 @@ function Employees(props) {
     console.log('Props CL for Employees', props);
 
     return (
-        <div>
-            <h3>Name: {props.employee}</h3>
-        </div>
+        <>
+            <h3>
+                {props.people.name.first} {props.people.name.last}{' '}
+                {props.people.email} {props.people.dob.age}
+            </h3>
+            <img src={props.people.picture.thumbnail} alt="" />
+        </>
     );
 }
 
