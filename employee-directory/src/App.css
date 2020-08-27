@@ -1,5 +1,14 @@
+* {
+    margin: 0;
+}
+
+#root > div > div {
+    background: beige;
+}
+
 .jumbotron.search-bar {
     background-color: black;
+    text-align: center;
 }
 
 .title {
@@ -17,4 +26,19 @@ input.form-input {
     width: 45%;
     text-align: center;
     height: 40px;
+}
+
+.employee-card {
+    display: inline-block;
+    margin-bottom: 30px;
+    width: 33%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 4vw;
+}
+
+h4 {
+    font-size: 4vw;
 }
