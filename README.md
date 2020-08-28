@@ -2,7 +2,9 @@
 
 ## A react app that employees can use to view non-sensitive data about other employees. Names can also be sorted by alphabetical order.
 
-## [Check out my app on Heroku](<[https://frozen-badlands-93210.herokuapp.com/](https://frozen-badlands-93210.herokuapp.com/)>)
+## [Check out my app on Heroku](https://frozen-badlands-93210.herokuapp.com/)
+
+
 
 ![image](https://drive.google.com/uc?export=view&id=1PsmB2li_6Uh80xNEMg7VNz6ulTeRz38E)
 
